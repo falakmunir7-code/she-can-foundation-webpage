@@ -3,33 +3,35 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
     background:#020617;
-    overflow-x:hidden;
     color:white;
+    overflow-x:hidden;
 }
 
 /* NAVBAR */
 
 nav{
     width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    padding:28px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:28px 8%;
-    position:fixed;
-    top:0;
+    background:rgba(0,0,0,0.25);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
     z-index:1000;
-    background:rgba(0,0,0,0.2);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 nav h1{
-    color:#4db5ff;
-    font-size:40px;
+    font-size:42px;
+    color:#38bdf8;
     font-weight:700;
 }
 
@@ -42,24 +44,25 @@ nav ul{
 nav ul li a{
     text-decoration:none;
     color:white;
-    font-size:20px;
+    font-size:19px;
     transition:0.3s;
+    font-weight:500;
 }
 
 nav ul li a:hover{
-    color:#4db5ff;
+    color:#38bdf8;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero{
     min-height:100vh;
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 8%;
+    padding:120px 8%;
     position:relative;
-    overflow:hidden;
 }
 
 /* BACKGROUND GLOW */
@@ -70,8 +73,8 @@ nav ul li a:hover{
     width:700px;
     height:700px;
     background:radial-gradient(circle,#2563eb55,transparent 70%);
-    top:-100px;
-    left:-150px;
+    top:-250px;
+    left:-200px;
     z-index:-1;
 }
 
@@ -82,11 +85,11 @@ nav ul li a:hover{
     height:600px;
     background:radial-gradient(circle,#7c3aed44,transparent 70%);
     bottom:-200px;
-    right:-100px;
+    right:-150px;
     z-index:-1;
 }
 
-/* LEFT */
+/* LEFT SIDE */
 
 .left{
     width:55%;
@@ -95,9 +98,9 @@ nav ul li a:hover{
 .tag{
     display:inline-block;
     background:rgba(255,255,255,0.08);
-    padding:12px 20px;
-    border-radius:14px;
-    margin-bottom:25px;
+    padding:14px 24px;
+    border-radius:15px;
+    margin-bottom:30px;
     font-size:18px;
     backdrop-filter:blur(10px);
 }
@@ -114,17 +117,17 @@ nav ul li a:hover{
 }
 
 .left h3{
-    font-size:34px;
+    font-size:32px;
     color:#d1d5db;
-    margin-bottom:30px;
     font-weight:400;
+    margin-bottom:30px;
 }
 
 .left p{
     font-size:22px;
     color:#94a3b8;
     line-height:1.8;
-    max-width:750px;
+    max-width:700px;
     margin-bottom:45px;
 }
 
@@ -133,23 +136,23 @@ nav ul li a:hover{
 .buttons{
     display:flex;
     gap:25px;
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
 
 .btn1,
 .btn2{
-    text-decoration:none;
     padding:18px 40px;
     border-radius:16px;
+    text-decoration:none;
     font-size:20px;
-    transition:0.3s;
     font-weight:600;
+    transition:0.3s;
 }
 
 .btn1{
     background:linear-gradient(to right,#0ea5e9,#2563eb);
     color:white;
-    box-shadow:0 0 30px rgba(14,165,233,0.4);
+    box-shadow:0 0 40px rgba(14,165,233,0.35);
 }
 
 .btn2{
@@ -175,8 +178,8 @@ nav ul li a:hover{
     display:flex;
     justify-content:center;
     align-items:center;
-    border-radius:50%;
     background:rgba(255,255,255,0.08);
+    border-radius:50%;
     font-size:22px;
     transition:0.3s;
     cursor:pointer;
@@ -187,7 +190,7 @@ nav ul li a:hover{
     transform:scale(1.1);
 }
 
-/* RIGHT */
+/* RIGHT SIDE */
 
 .right{
     width:40%;
@@ -206,27 +209,133 @@ nav ul li a:hover{
     font-size:140px;
     font-weight:700;
     color:white;
+
     box-shadow:
     0 0 60px rgba(56,189,248,0.5),
-    0 0 120px rgba(99,102,241,0.3);
+    0 0 120px rgba(99,102,241,0.25);
+}
+
+/* ABOUT */
+
+.about{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.about h2{
+    font-size:55px;
+    margin-bottom:25px;
+    color:#38bdf8;
+}
+
+.about p{
+    font-size:22px;
+    color:#94a3b8;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* IMPACT */
+
+.impact{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.impact h2{
+    font-size:55px;
+    margin-bottom:60px;
+    color:#38bdf8;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:50px 30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+    backdrop-filter:blur(10px);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(56,189,248,0.2);
+}
+
+.card h3{
+    font-size:50px;
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#cbd5e1;
+    font-size:20px;
+}
+
+/* VOLUNTEER */
+
+.volunteer{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.volunteer h2{
+    font-size:55px;
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.volunteer p{
+    font-size:22px;
+    color:#94a3b8;
+    margin-bottom:35px;
+}
+
+.volunteer button{
+    padding:18px 40px;
+    border:none;
+    border-radius:16px;
+    background:linear-gradient(to right,#0ea5e9,#2563eb);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:600;
+}
+
+.volunteer button:hover{
+    transform:translateY(-5px);
+}
+
+/* CONTACT */
+
+.contact{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:55px;
+    margin-bottom:25px;
+    color:#38bdf8;
+}
+
+.contact p{
+    font-size:22px;
+    color:#94a3b8;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:1200px){
-
-    .left h2{
-        font-size:70px;
-    }
-
-    .circle{
-        width:350px;
-        height:350px;
-        font-size:100px;
-    }
-}
-
-@media(max-width:900px){
+@media(max-width:1000px){
 
     nav ul{
         display:none;
@@ -234,9 +343,8 @@ nav ul li a:hover{
 
     .hero{
         flex-direction:column;
-        justify-content:center;
         text-align:center;
-        padding-top:120px;
+        padding-top:150px;
     }
 
     .left{
@@ -245,7 +353,7 @@ nav ul li a:hover{
 
     .right{
         width:100%;
-        margin-top:60px;
+        margin-top:70px;
     }
 
     .buttons{
@@ -257,7 +365,7 @@ nav ul li a:hover{
     }
 
     .left h2{
-        font-size:55px;
+        font-size:65px;
     }
 
     .left h3{
@@ -266,6 +374,12 @@ nav ul li a:hover{
 
     .left p{
         font-size:18px;
+    }
+
+    .circle{
+        width:320px;
+        height:320px;
+        font-size:100px;
     }
 }
 
@@ -276,18 +390,25 @@ nav ul li a:hover{
     }
 
     .left h2{
-        font-size:42px;
+        font-size:48px;
     }
 
-    .circle{
-        width:260px;
-        height:260px;
-        font-size:80px;
+    .about h2,
+    .impact h2,
+    .volunteer h2,
+    .contact h2{
+        font-size:40px;
     }
 
     .btn1,
     .btn2{
         padding:14px 24px;
         font-size:16px;
+    }
+
+    .circle{
+        width:250px;
+        height:250px;
+        font-size:75px;
     }
 }
